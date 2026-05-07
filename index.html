@@ -249,15 +249,13 @@ function updateLegend(){
         let div = L.DomUtil.create('div','legend');
         div.innerHTML = "<b>Fournisseurs</b><br>";
 
-        Array.from(fournisseurs)
-            .sort((a,b)=>a.localeCompare(b))   // TRI ALPHABETIQUE
-            .forEach(f=>{
+        Array.from(fournisseurs).sort().forEach(f=>{
 
             let span = document.createElement("span");
 
             span.innerHTML = `
                 <div class="legend-box"></div>
-                ${f.toUpperCase()}   <!-- MAJUSCULE -->
+                ${f}
             `;
 
             span.onclick = ()=> {
